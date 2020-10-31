@@ -1,7 +1,7 @@
 import streamlit as st
 import pandas as pd
 import numpy as np
-impot pydeck as pdk
+import pydeck as pdk
 
 DATA_URL = (
 "/home/rhyme/Desktop/Project/Motor_Vehicle_Collisions_-_Crashes.csv"
@@ -29,7 +29,7 @@ st.header("How many collisions occur during a given time of day?")
 hour = st.selectbox("Hour to look at", 0, 23)
 data = data[data['date/time'].dt.hour == hour]
 
-st.markdown("Vehicle colisiosn between %i:00 and %i:00")
+st.markdown("Vehicle collisions between %i:00 and %i:00")
 midpoint = (np.average(data['latitude']), np.average(data['longitude']))
 
 st.write(pdk.Deck(
